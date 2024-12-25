@@ -1,11 +1,19 @@
 # ADSBHub feeder Docker image
 
-[![Docker Build Status](https://img.shields.io/docker/build/jraviles/adsbhub.svg)](https://hub.docker.com/r/jraviles/adsbhub/)
+[![Deploy](https://github.com/jeanralphaviles/adsbhub-docker/actions/workflows/deploy.yml/badge.svg)](https://github.com/jeanralphaviles/adsbhub-docker/actions/workflows/deploy.yml)
 [![GitHub](https://img.shields.io/github/license/jeanralphaviles/adsbhub-docker.svg)](https://github.com/jeanralphaviles/adsbhub-docker)
 
 Feed data from [dump1090](https://github.com/flightaware/dump1090) to
 [ADSBHub](http://www.adsbhub.org/) quickly and easily with Docker! Works best
 with [dump1090-docker](https://github.com/jeanralphaviles/dump1090-docker).
+
+Supported architectures:
+
+| architecture |
+|--------------|
+| amd64        |
+| arm64        |
+| armv7        |
 
 ## Usage
 
@@ -32,30 +40,3 @@ with [dump1090-docker](https://github.com/jeanralphaviles/dump1090-docker).
 ```shell
 docker build -t jraviles/adsbhub:latest .
 ```
-
-## Maintenance
-
-### Uploading new images to Docker Hub
-
-1. Build and push the new image.
-
-   ```shell
-   # Make sure you have run docker login
-   docker build -t jraviles/adsbhub:<arch> .
-   docker push jraviles/adsbhub:<arch>
-   ```
-
-1. Build and push a new manifest with
-   [manifest-tool](https://github.com/estesp/manifest-tool).
-
-   ```shell
-   # Install manifest-tool
-   manifest-tool push from-spec manifest-adsbhub.yml
-   ```
-
-Supported architectures:
-
-| architecture 	|
-|--------------	|
-| amd64        	|
-| arm64        	|
